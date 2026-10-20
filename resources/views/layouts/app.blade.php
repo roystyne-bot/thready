@@ -8,48 +8,57 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-gray-950 text-white">
     <div class="flex">
-        <nav class="flex flex-col items-center flex-1">
-            <div class="flex justify-evenly items-center">
+        <nav class="flex flex-col gap-6 px-3 py-5 text-white w-[200px] bg-gray-900 min-h-screen">
+            <div class="flex justify-between items-center px-3">
                 <div>
                     <span class="text-2xl italic font-semibold">@thready</span>
                 </div>
-                <div>
-                    ——
+                <div class="text-gray-400">
+                    —
                 </div>
             </div>
-            <div class="flex-1">
-                <ul class="flex flex-col gap-1 items-center justify-center">
-                    <a href="{{ route('post') }}">
-                        <li class="px-3 py-0.5">For You</li>
-                    </a>
-                    <a href="">
-                        <li class="px-3 py-0.5"><span class="text-xl">+</span> New thread</li>
-                    </a>
+            <div class="border-b border-gray-800 pb-4">
+                <ul class="flex flex-col gap-1">
+                    <li>
+                        <a href="{{ route('posts.index') }}" class="block px-3 py-2 rounded-lg hover:bg-gray-800 {{ request()->routeIs('posts.index') ? 'text-white font-semibold' : 'text-gray-400' }}">For You</a>
+                    </li>
+                    <li>
+                        <a href="" class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white"><span class="text-xl">+</span>New thread</a>
+                    </li>
                 </ul>
             </div>
-            <div class="flex-1">
-                <ul>
-                    <li class="px-3 py-0.5" href="">Profile</li>
+            <div class="border-b border-gray-800 pb-4">
+                <ul class="flex flex-col gap-1">
+                    <li>
+                        <a href="" class="block px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white">Profile</a>
+                    </li>
                 </ul>
             </div>
-            <div class="flex-1">
-                <ul>
-                    <a href="">
-                        <li class="px-3 py-0.5">Saved</li>
-                    </a>
-                    <a href="">
-                        <li class="px-3 py-0.5">Liked</li>
-                    </a>
+            <div>
+                <ul class="flex flex-col gap-1">
+                    <li>
+                        <a href="" class="block px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white">Saved</a>
+                    </li>
+                    <li>
+                        <a href="" class="block px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white">Liked</a>
+                    </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="flex-2">
-           @yield('content')
+        <div class="flex-2 flex justify-center py-4 px-4">
+            <main class="w-full max-w-xl bg-gray-900 border border-gray-800 rounded-3xl min-h-screen">
+                <div class="py-4 text-center font-semibold border-b border-gray-800">
+                    For You
+                </div>
+                <div class="px-5 py-4">
+                    @yield('content')
+                </div>
+            </main>
         </div>
-        
+
         <div class="flex-1">
 
         </div>
