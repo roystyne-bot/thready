@@ -11,13 +11,14 @@
 <body class="bg-gray-950 text-white">
     <div class="flex">
         <nav class="flex flex-col gap-6 px-3 py-5 text-white w-[200px] bg-gray-900 min-h-screen">
-            <div class="flex justify-between items-center px-3">
+            <div class="flex justify-between items-center px-1">
                 <div>
-                    <span class="text-2xl italic font-semibold">@thready</span>
+                    <span class="text-2xl italic font-semibold">@Thready</span>
                 </div>
-                <div class="text-gray-400">
-                    —
-                </div>
+                <button class="text-gray-400 flex flex-col justify-center items-center gap-1 p-2 rounded-lg">
+                    <span class="block w-6 h-0.5 bg-red-400 rounded-full"></span>
+                    <span class="block w-6 h-0.5 bg-red-400 rounded-full"></span>
+                </button>
             </div>
             <div class="border-b border-gray-800 pb-4">
                 <ul class="flex flex-col gap-1">
@@ -65,5 +66,4 @@
 
     </div>
 </body>
-
 </html>
