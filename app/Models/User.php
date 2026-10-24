@@ -17,6 +17,22 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    public function likedPosts()
+    {
+        return $this->belongsToMany(Post::class, 'likes')->withTimestamps();
+    }
+    public function savedPosts()
+    {
+        return $this->belongsToMany(Post::class, 'saves')->withTimestamps();
+    }
     /**
      * Get the attributes that should be cast.
      *
