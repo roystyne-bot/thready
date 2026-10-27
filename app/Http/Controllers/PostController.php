@@ -29,7 +29,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = find($id);
+        return view('posts.show', compact('post'));
     }
 
     /**
