@@ -38,7 +38,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = find($id);
+        return view('posts.edit');
     }
 
     /**
@@ -46,7 +47,10 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updatedData = $request->validate([
+           'title' => 'required'                           
+        ]);
+        User::update($updatedData, $id);
     }
 
     /**
